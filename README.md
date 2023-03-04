@@ -12,7 +12,6 @@ The following **required** functionality is completed:
 
 - [x] Users are able to see a customized app icon and launch screen
 - [x] Your app should work for any screen size and orientation using AutoLayout constraints
-  - [x]
 - [x] Displays at least 5 different movies in a table view
 - [x] Can tap into detail view of movie with a full description, backdrop image, and title
 
