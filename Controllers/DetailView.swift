@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class SecondScreen: UIViewController {
+class DetailView: UIViewController {
     
     var movie: Movie!
     
@@ -23,7 +23,8 @@ class SecondScreen: UIViewController {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.textAlignment = .center
         label.numberOfLines = 20
         return label
     }()
@@ -31,21 +32,25 @@ class SecondScreen: UIViewController {
     let voteAverageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.textAlignment = .center
         return label
     }()
     
     let voteCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.textAlignment = .center
         return label
     }()
     
     let popularityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.textAlignment = .center
+
         return label
     }()
     
@@ -70,12 +75,16 @@ class SecondScreen: UIViewController {
     
     // MARK: - Setup UI
     func setupUI(){
-        Nuke.loadImage(with: movie.backdropImage, into: backdropImage)
-        movieTitleLabel.text = movie.movieTitle
-        descriptionLabel.text = movie.description
-        voteAverageLabel.text = movie.voteAverage
-        voteCountLabel.text = movie.voteCount
-        popularityLabel.text = movie.popularity
+        let baseURL = "https://image.tmdb.org/t/p/w500"
+        let backdropPath = movie.backdrop_path.absoluteString
+        let imagePath = baseURL + backdropPath
+        let imageURL = URL(string: imagePath)
+        Nuke.loadImage(with: imageURL!, into: backdropImage)
+        movieTitleLabel.text = movie.original_title
+        descriptionLabel.text = movie.overview
+        voteAverageLabel.text = "Vote average 👌🏼:  " + String(movie.vote_average.rounded())
+        voteCountLabel.text = "Vote Count 💯:  " + String(movie.vote_count)
+        popularityLabel.text = "Popularity 💁🏻‍♀️:  " + String(movie.popularity.rounded())
         
         view.addSubview(scrollView)
         scrollView.addSubview(backdropImage)
@@ -109,17 +118,20 @@ class SecondScreen: UIViewController {
             movieTitleLabel.topAnchor.constraint(equalTo: backdropImage.bottomAnchor, constant: 10),
             
             voteAverageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            voteAverageLabel.topAnchor.constraint(equalTo: movieTitleLabel.bottomAnchor,constant: 30),
+            voteAverageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            voteAverageLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor,constant: 30),
             
-            voteCountLabel.centerXAnchor.constraint(equalTo: voteAverageLabel.centerXAnchor),
-            voteCountLabel.topAnchor.constraint(equalTo: voteAverageLabel.bottomAnchor, constant: 5),
+            voteCountLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            voteCountLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            voteCountLabel.topAnchor.constraint(equalTo: voteAverageLabel.bottomAnchor, constant: 10),
             
+            popularityLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             popularityLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            popularityLabel.topAnchor.constraint(equalTo: movieTitleLabel.bottomAnchor, constant: 35),
+            popularityLabel.topAnchor.constraint(equalTo: voteCountLabel.bottomAnchor, constant: 10),
             
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            descriptionLabel.topAnchor.constraint(equalTo: voteCountLabel.bottomAnchor, constant: 30)
+            descriptionLabel.topAnchor.constraint(equalTo: movieTitleLabel.bottomAnchor, constant: 30)
         ])
     }
     

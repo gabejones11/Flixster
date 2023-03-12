@@ -18,15 +18,44 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        //Create UITabBarController
+        let tabBarController = UITabBarController()
+        
+        //Tab bar items
+        let playingNowItem = UITabBarItem(title: "Playing Now", image: UIImage(systemName: "play.display"), selectedImage: UIImage(systemName: "play.display"))
+        let posterViewItem = UITabBarItem(title: "Poster View", image: UIImage(systemName: "film"), selectedImage: UIImage(systemName: "film"))
+        
+        //Create view controller for each tab
+        let homeScreen = HomeScreen()
+        let navigationController1 = UINavigationController(rootViewController: homeScreen)
+        let posterScreen = PosterScreen()
+        let navigationController2 = UINavigationController(rootViewController: posterScreen)
+
+        //Set the view controller for the tab bar controller
+        tabBarController.viewControllers = [
+            navigationController1,
+            navigationController2
+        ]
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: FirstScreen())
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        navigationController.navigationBar.barTintColor = UIColor.black.withAlphaComponent(1.0)
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
+        //Tab bar appearance
+        tabBarController.tabBar.barTintColor = UIColor.black.withAlphaComponent(1.0)
+        tabBarController.tabBar.isTranslucent = false
+        
+        //Navigation bar appearance
+        navigationController1.navigationBar.barTintColor = UIColor.black.withAlphaComponent(1.0)
+        navigationController1.navigationBar.isTranslucent = false
+        navigationController1.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController2.navigationBar.barTintColor = UIColor.black.withAlphaComponent(1.0)
+        navigationController2.navigationBar.isTranslucent = false
+        navigationController2.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController1.tabBarItem = playingNowItem
+        navigationController2.tabBarItem = posterViewItem
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
