@@ -1,4 +1,4 @@
- Project 3 - *Flixster Part 2*
+# Project 3 - *Flixster Part 2*
 
 Submitted by: **Gabriel Jones**
 
@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-`![Flixster App](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhhZGUyOTAxODI4MmUxZWQwODZjNzNjYTU2YTQ2M2E2MzE1NDMwNCZjdD1n/GRTasgz96tJRGu1b8U/giphy-downsized-large.gif)
+`![Flixster App]([https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhhZGUyOTAxODI4MmUxZWQwODZjNzNjYTU2YTQ2M2E2MzE1NDMwNCZjdD1n/GRTasgz96tJRGu1b8U/giphy-downsized-large.gif](https://giphy.com/gifs/GRTasgz96tJRGu1b8U))
 
 GIF created with xcode simulator screen record
 
