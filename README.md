@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Flixster](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVhNTk5M2I1N2E4NWY2ZWE1MzVjNWMyNjRjZmJhMjFiZmZhY2UwZiZjdD1n/yA1uahIrYZU0xE2Eft/giphy-downsized-large.gif)
+![Flixster](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZmNWUzZWEzZDA2ZTkyNjU3ODBjYWQ2MTI2MTFjMTJhNzdkNWRiNCZjdD1n/KcFnOjJjhc7YlAtZU7/giphy.gif)
 
 GIF created with xcode simulator screen record
 
