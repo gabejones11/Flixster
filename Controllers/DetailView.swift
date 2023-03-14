@@ -79,12 +79,13 @@ class DetailView: UIViewController {
         let backdropPath = movie.backdrop_path.absoluteString
         let imagePath = baseURL + backdropPath
         let imageURL = URL(string: imagePath)
+        let roundedPopularity = round(movie.popularity * 10) / 10
         Nuke.loadImage(with: imageURL!, into: backdropImage)
         movieTitleLabel.text = movie.original_title
         descriptionLabel.text = movie.overview
-        voteAverageLabel.text = "Vote average 👌🏼:  " + String(movie.vote_average.rounded())
+        voteAverageLabel.text = "Vote average 👌🏼:  " + String(movie.vote_average)
         voteCountLabel.text = "Vote Count 💯:  " + String(movie.vote_count)
-        popularityLabel.text = "Popularity 💁🏻‍♀️:  " + String(movie.popularity.rounded())
+        popularityLabel.text = "Popularity 💁🏻‍♀️:  " + String(roundedPopularity)
         
         view.addSubview(scrollView)
         scrollView.addSubview(backdropImage)
@@ -140,9 +141,9 @@ class DetailView: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         if UIDevice.current.orientation.isLandscape{
-            scrollView.contentSize = CGSize(width: size.width, height: size.height * 1.5)
+            scrollView.contentSize = CGSize(width: size.width, height: size.height * 2.2)
         } else {
-            scrollView.contentSize = CGSize(width: size.width, height: descriptionLabel.frame.maxY + 20)
+            scrollView.contentSize = CGSize(width: size.width, height: view.frame.maxY + 20)
         }
     }
 }
