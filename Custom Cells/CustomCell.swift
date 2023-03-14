@@ -32,6 +32,8 @@ class CustomCell: UITableViewCell {
     
     let movieImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -46,11 +48,15 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Functions
+    // MARK: - Configuration
     func configure(with movie: Movie){
-        movieNameLabel.text = movie.movieTitle
-        descriptionLabel.text = movie.description
-        Nuke.loadImage(with: movie.artWorkUrl100, into: movieImageView)
+        movieNameLabel.text = movie.original_title
+        descriptionLabel.text = movie.overview
+        let baseURL = "https://image.tmdb.org/t/p/w500"
+        let posterPath = movie.poster_path.absoluteString
+        let imagePath = baseURL + posterPath
+        let imageURL = URL(string: imagePath)
+        Nuke.loadImage(with: imageURL!, into: movieImageView)
         
     }
     
