@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-`![Flixster App](https://media.giphy.com/media/GRTasgz96tJRGu1b8U/giphy-downsized-large.gif)
+<iframe src="https://giphy.com/embed/yA1uahIrYZU0xE2Eft" width="222" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/yA1uahIrYZU0xE2Eft">via GIPHY</a></p>
 
 GIF created with xcode simulator screen record
 
