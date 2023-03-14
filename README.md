@@ -1,8 +1,8 @@
-# Project 2 - *Flixster*
+ Project 3 - *Flixster Part 2*
 
 Submitted by: **Gabriel Jones**
 
-**Flixster** is a movie browsing application which presents a table view of movies to users. Users can select a cell from the table to access additional details about each movie, including the Title, Description, Average Vote Score, Number of Votes, and Popularity.
+**Flixster** has incorporated networking features with the help of the free TMDB API, enabling it to provide users with an updated list of movies currently playing in theaters. The API also offers accompanying details such as descriptions, vote ratings, vote counts, and popularity scores. Additionally, Flixster now offers a poster view feature, allowing users to browse the app by viewing movie posters instead of the traditional table view.
 
 Time spent: **10** hours spent in total
 
@@ -10,30 +10,34 @@ Time spent: **10** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] Users are able to see a customized app icon and launch screen
-- [x] Your app should work for any screen size and orientation using AutoLayout constraints
-- [x] Displays at least 5 different movies in a table view
-- [x] Can tap into detail view of movie with a full description, backdrop image, and title
+- [x] Implement network call and table view to display a list of movies currently playing (title, description, image)
+- [x] App has a collection view with the same list of movies
+- [x] Uses a tab bar controller to switch between collection view and table view screens
+ 
+The following **optional** features are implemented:
+
+- [x] Allow users to scroll when context items are off-screen (table view implemention)
 
 The following **additional** features are implemented:
 
-- [x] I finalized the project by exclusively utilizing UIKit, except for the launch screen which was created using Storyboard.
+- [x] Added emojis for styling 
+- [x] Project was done completely in UIKit except for launch screen
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-`![Flixster](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDEyNWJjY2IzNzRlODQ4NGEyNjc2NzdjODAxMzk0OGJkYTEwMmU4NyZjdD1n/rfG7Zob6u79Rqc0YY3/giphy.gif)
+`![Flixster App](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhhZGUyOTAxODI4MmUxZWQwODZjNzNjYTU2YTQ2M2E2MzE1NDMwNCZjdD1n/GRTasgz96tJRGu1b8U/giphy-downsized-large.gif)
 
 GIF created with xcode simulator screen record
 
-## Notes
+## Notes/Struggles
 
-Throughout the course of the project, I had to tackle a couple of obstacles. One of the major challenges I encountered was trying to figure out how to customize the navigation bar to display a black color instead of having a black tint. It took me quite some time to figure out the solution, but after several attempts, I finally got it to work.
+Adding and Styling the Tab Bar: One of the challenges that I faced during the development of this application was adding the tab bar and styling it to match with the navigation bar.
 
-Another hurdle that I had to overcome was finding out how to keep the navigation bar visible at all times. Initially, it only appeared when the user scrolled, which was not what I intended. It took some research and experimentation to find the right approach, but I eventually managed to make it work.
+Formatting Cells in Collection View: Another difficulty that I encountered was formatting the cells in my collection view so that they looked good on any device and any screen orientation.
 
-Lastly, I had to figure out how to make the second screen scrollable by incorporating a scrollView. This was a bit challenging because I had never done it before, but I was determined to figure it out. After some trial and error, I finally figured out the correct implementation, and it worked flawlessly.
+Incorporating Scroll View in Landscape Mode: Lastly, I struggled with incorporating the scroll view for when the device is in landscape mode on the detail view. This was particularly challenging as I had to ensure that the content remained visible and easily navigable despite the change in screen orientation.
 
 ## License
 
@@ -50,4 +54,3 @@ Lastly, I had to figure out how to make the second screen scrollable by incorpor
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
